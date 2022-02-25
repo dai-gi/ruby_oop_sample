@@ -18,3 +18,6 @@ end
 
 pochi = Dog.new
 hachi = Dog.new
+
+puts pochi.shake_tail
+puts hachi.bark
