@@ -15,3 +15,6 @@ class Dog
     "tail shaking"
   end
 end
+
+pochi = Dog.new
+hachi = Dog.new
