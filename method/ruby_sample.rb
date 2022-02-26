@@ -10,10 +10,24 @@ class Dog
   #  @address
   # end
 
+  # クラスメソッド
+  def self.drink # self = Dogクラス
+    "drinking"
+  end
+
   #初期化メソッド
   def initialize(arg1, arg2)
     @name = arg1
     @address = arg2
+  end
+
+  # インスタンスメソッドの中で使用すると、インスタンスをレシーバとみなす
+  def bark
+    self.bowwow # pochiでインスタンス化した場合「self = pochi」になる
+  end
+
+  def bowwow
+    "Bowwow Bowwow"
   end
 end
 
@@ -29,3 +43,9 @@ p pochi.methods # [:address, :name, :taint, :tainted?...]
 
 # どのクラスからインスタンス化されたか確認する
 p pochi.class # Dog
+
+# クラスメソッドを定義することによって、クラス自身にメソッドを実行することができるようになる
+puts Dog.drink # drinking
+
+# インスタンスメソッドないでselfを使用した状態で、barkメソッドを実行する
+puts pochi.bark # Bowwow Bowwow
