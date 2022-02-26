@@ -1,4 +1,12 @@
 class Dog
+  def name=(arg)
+    @name = arg
+  end
+
+  def name()
+    @name
+  end
+
   def eat
     "eating"
   end
@@ -21,3 +29,9 @@ hachi = Dog.new
 
 puts pochi.shake_tail
 puts hachi.bark
+
+pochi.name=("pochi")
+hachi.name=("hachi")
+
+puts pochi.name
+puts hachi.name
