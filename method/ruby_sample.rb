@@ -23,3 +23,9 @@ pochi = Dog.new("pochi", "Tokyo")
 # 各メソッドを実行して、インスタンス変数の値を出力する
 puts pochi.name # pochi
 puts pochi.address # Tokyo
+
+# pochiインスタンスが持っているメソッドを確認する
+p pochi.methods # [:address, :name, :taint, :tainted?...]
+
+# どのクラスからインスタンス化されたか確認する
+p pochi.class # Dog
