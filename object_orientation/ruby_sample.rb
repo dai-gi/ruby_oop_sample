@@ -1,11 +1,5 @@
 class Dog
-  def name=(arg)
-    @name = arg
-  end
-
-  def name()
-    @name
-  end
+  attr_accessor :name
 
   def eat
     "eating"
