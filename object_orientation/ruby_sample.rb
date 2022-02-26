@@ -29,3 +29,5 @@ hachi.name=("hachi")
 
 puts pochi.name
 puts hachi.name
+
+puts pochi.instance_variables
