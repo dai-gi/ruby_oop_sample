@@ -12,12 +12,16 @@ class Animal
   def move
     "自由に移動する"
   end
+
+  def voice(arg1="ウォー", arg2="声を出す")
+    "#{name}が#{arg1}と#{arg2}"
+  end
 end
 
 # Animalクラスを継承
 class Cat < Animal
-  def cry
-    "ニャーゴ"
+  def voice
+    super(arg1="ニャーゴ")
   end
 
   def scratch
@@ -27,8 +31,8 @@ end
 
 
 class Dog < Animal
-  def bark
-    "吠える"
+  def voice
+    super(arg1="わんわん", arg2="吠える")
   end
 
   def shake_tail
@@ -55,7 +59,7 @@ puts mike.scratch # ひっかく
 
 puts "ポチが保持しているメソッド実行"
 puts pochi.eat # 食べる
-puts pochi.bark # 吠える
+puts pochi.voice # ポチがわんわんと吠える
 
 # 継承元を確認する
 p Cat.superclass # Animal
@@ -63,3 +67,7 @@ p Dog.superclass # Animal
 
 # 親クラスの継承元を確認してみる
 p Animal.superclass # Object <- 継承元の最終着地点
+
+# オーバーライドしたメソッドを実行してみる
+puts mike.voice # みけがニャーゴと声を出す
+puts pochi.voice # ポチがわんわんと吠える
