@@ -27,7 +27,13 @@ class Dog
   end
 
   def bowwow
-    "Bowwow Bowwow"
+    # プライベートメソッドを実行
+    "Bowwow Bowwow! and #{menacing}"
+  end
+
+  private
+  def menacing
+    "intimidate"
   end
 end
 
@@ -47,5 +53,6 @@ p pochi.class # Dog
 # クラスメソッドを定義することによって、クラス自身にメソッドを実行することができるようになる
 puts Dog.drink # drinking
 
-# インスタンスメソッドないでselfを使用した状態で、barkメソッドを実行する
-puts pochi.bark # Bowwow Bowwow
+# インスタンスメソッド内でselfを使用した状態で、barkメソッドを実行する
+# プライベートメソッドも実行
+puts pochi.bark # Bowwow Bowwow! and intimidate
