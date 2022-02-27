@@ -44,7 +44,7 @@ end
 
 
 class Dog < Animal
-  include Pet
+  extend Pet
 
   def voice
     super(arg1="わんわん", arg2="吠える")
@@ -88,9 +88,13 @@ puts mike.voice # みけがニャーゴと声を出す
 puts pochi.voice # ポチがわんわんと吠える
 
 # 組み込んだモジュールのメソッドを実行してみる
-pochi.owner = "山田太郎"
-puts pochi.owner # 山田太郎
+# pochi.owner = "山田太郎"
+# puts pochi.owner # 山田太郎
 
-puts pochi.look("山田太郎") # 甘える
-puts pochi.look("田中花子") # 警戒する
-puts pochi.look # 警戒する
+# puts pochi.look("山田太郎") # 甘える
+# puts pochi.look("田中花子") # 警戒する
+# puts pochi.look # 警戒する
+
+# extendで組み込んだモジュールでクラスに対してメソッドを実行してみる
+Dog.owner = "佐藤太郎"
+puts Dog.look("佐藤太郎")
