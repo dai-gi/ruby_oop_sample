@@ -1,3 +1,16 @@
+# モジュールを定義する
+module Pet
+  attr_accessor :owner
+
+  def look(arg=nil)
+    if owner == arg
+      "甘える"
+    else
+      "警戒する"
+    end
+  end
+end
+
 class Animal
   attr_reader :name
 
@@ -31,6 +44,8 @@ end
 
 
 class Dog < Animal
+  include Pet
+
   def voice
     super(arg1="わんわん", arg2="吠える")
   end
@@ -71,3 +86,11 @@ p Animal.superclass # Object <- 継承元の最終着地点
 # オーバーライドしたメソッドを実行してみる
 puts mike.voice # みけがニャーゴと声を出す
 puts pochi.voice # ポチがわんわんと吠える
+
+# 組み込んだモジュールのメソッドを実行してみる
+pochi.owner = "山田太郎"
+puts pochi.owner # 山田太郎
+
+puts pochi.look("山田太郎") # 甘える
+puts pochi.look("田中花子") # 警戒する
+puts pochi.look # 警戒する
